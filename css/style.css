@@ -2,7 +2,7 @@
 .header_container{
     width: 100%;
     height: 50px;
-    background-color: #343434;
+    background-color: #ffdd88;
     display: grid;
     place-items: center;
 }
@@ -13,16 +13,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: solid 0.5px #fcfcfc;
     }
 
         /*LOGO*/
         .header_inner_logo_container{
-            width: 120px;
+            width: auto;
             height: 40px;
             margin-left: 10px;
-            background-color: #d9d9d9;
         }
+
+            .header_inner_logo_container img{
+                width: auto;
+                height: 40px;
+            }
 
         /*NAVIGATION MENU*/
         nav button{
@@ -45,6 +48,7 @@
                 height: 3px;
                 background-color: #fcfcfc;
                 grid-area: 1 / 1;
+                transition: transform 0.5s;
 
             }
 
@@ -55,6 +59,7 @@
             height: 3px;
             background-color: #fcfcfc;
             grid-area: 1 / 1;
+            transition: transform 0.5s;
         }
 
         button::before{
@@ -65,10 +70,275 @@
             transform: translateY(12px);
         }
 
+        .navigation_menu_container{
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: transform 0.5s;
+            display: grid;
+            place-items: center;
+        }
+
+            .navigation_menu_container ul{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+                .navigation_menu_container ul li{
+                    font-family: "Noto Serif JP", serif;
+                    font-optical-sizing: auto;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 16px;
+                    color: #ffffff;
+                    text-align: center;
+                }
+
+/*OPEN CLASS*/
+.open{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+}
+
+    .open .header_container .buttonBar{
+        transform: scale(0);
+    }
+
+    .open button::before{
+        transform: translateY(0) rotate(45deg);
+        z-index: 1000;
+    }
+
+    .open button::after{
+        transform: translateY(0) rotate(-45deg);
+        z-index: 1000;
+    }
+
+    .open .navigation_menu_container{
+        transform: translate(-100%, 0);
+    }
+
+@media(min-width: 768px){
+    .header_inner_container nav button{
+        display: none;
+    }
+
+    .navigation_menu_container{
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .navigation_menu_container ul{
+        flex-direction: row;
+    }
+}
+
 /*MAIN*/
-/*FIRST VIEW*/
+/*FIRST VIEW -MOBILE-*/
 .firstView_container{
     width: 100%;
     height: 550px;
-    background-color: #d9d9d9;
+    background-image: url(../img/firstview_image_ver2_w768_h550.jpg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+}
+
+    .firstView_text_container{
+        width: 350px;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+        .firstView_text_container h1{
+            font-family: "Zen Maru Gothic", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            margin-top: 5px;
+            position: absolute;
+            left: 0;
+        }
+
+        .firstView_text_container h2{
+            font-family: "Noto Serif JP", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 28px;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 40px;
+        }
+
+        .firstView_text_copy_container{
+            position: absolute;
+            top: 480px;
+        }
+
+            .firstView_text_copy_container h3{
+                font-family: "Noto Serif JP", serif;
+                font-optical-sizing: auto;
+                font-weight: 700;
+                font-style: normal;
+                font-size: 28px;
+                line-height: 2rem;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+            }
+
+/*FIRST VIEW -SEand13mini-*/
+@media(max-width: 350px){
+    .firstView_text_container{
+        width: 300px;
+    }
+}
+
+/*FIRST VIEW -DESKTOP-*/
+@media(min-width: 768px){
+    .firstView_text_container{
+        width: 768px;
+        max-width: 1280px;
+    }
+
+    .firstView_text_container h1{
+        margin-left: 10px;
+    }
+}
+
+/*FEATURE -MOBILE-*/
+.feature_container{
+    width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+}
+
+    .feature_heading_container{
+        width: 100%;
+        height: 150px;
+        background-color: #fcfcfc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+        .feature_heading_container h2{
+            font-family: "Kaisei Decol", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+        }
+
+    .feature_contents_container{
+        width: 100%;
+        height: 730px;
+        background-color: #feecd2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+        .feature_contents_image_container, .feature_contents_text_container{
+            width: 350px;
+            height: 350px;
+        }
+
+        .feature_contents_image_container{
+            background-image: url(../img/feature_w720_h720.jpg);
+            background-size: cover;
+            background-size: center;
+            display: grid;
+            place-items: center;
+        }
+
+            .feature_contents_image_container h3{
+                font-family: "Noto Serif JP", serif;
+                font-optical-sizing: auto;
+                font-weight: 700;
+                font-style: normal;
+                font-size: 24px;
+                color: #ffffff;
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: 10px;
+            }
+
+        .feature_contents_text_container{
+            display: grid;
+            place-items: center;
+        }
+
+                .feature_contents_text_container ul li{
+                    font-family: "Noto Serif JP", serif;
+                    font-optical-sizing: auto;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 20px;
+                    margin-top: 20px;
+                }
+
+/*FEATURE -DESKTOP-*/
+@media(min-width: 768px){
+    .feature_contents_text_container ul li{
+        font-size: 22px;
+    }
+
+    .feature_contents_image_container, .feature_contents_text_container{
+        width: 374px;
+    }
+
+    .feature_contents_container{
+        height: auto;
+    }
+
+    .feature_contents_container{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .feature_heading_container h2{
+        font-size: 32px;
+    }
+
+    .feature_heading_container{
+        height: 200px;
+    }
+}
+
+/*FEATURE -SEand13mini-*/
+@media(max-width: 350px){
+    .feature_contents_text_container ul li{
+        font-size: 16px;
+    }
+
+    .feature_contents_image_container h3{
+        font-size: 20px;
+    }
+
+    .feature_contents_image_container, .feature_contents_text_container{
+        width: 300px;
+    }
+
+    .feature_heading_container h2{
+        font-size: 14px;
+    }
 }

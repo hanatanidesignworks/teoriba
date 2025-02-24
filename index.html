@@ -16,7 +16,11 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<!--Noto Serif Japanese-->
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
-		
+		<!--Zen Maru Gothic-->
+		<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Kaisei+Decol:wght@400;700&family=M+PLUS+Rounded+1c&family=Noto+Serif+JP:wght@200..900&family=Shippori+Mincho&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+		<!--Kaisei Decol-->
+		<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Kaisei+Decol&family=Noto+Serif+JP:wght@200..900&family=Shippori+Mincho&display=swap" rel="stylesheet">
+
 		<link rel="stylesheet" href="css/style.css?v=1.0" />
 		<link rel="stylesheet" href="css/style_initialize.css" />
 	</head>
@@ -28,13 +32,20 @@
 				<div class="header_inner_container">
 					<!--LOGO-->
 					<div class="header_inner_logo_container">
-
+						<img src="img/teOriba_logo_w476_160.png" alt="ておりばロゴ" width="476" height="160">
 					</div>
 					<!--NAVIGATION MENU-->
 					<nav>
-						<button>
+						<button onclick="document.querySelector('body').classList.toggle('open')">
 							<div class="buttonBar"></div>
 						</button>
+						<div class="navigation_menu_container">
+							<ul>
+								<li>home</li>
+								<li>about us</li>
+								<li>contact</li>
+							</ul>
+						</div>
 					</nav>
 				</div>
 			</div>
@@ -44,9 +55,45 @@
 			<!--FIRST VIEW-->
 			<section class="firstView">
 				<div class="firstView_container">
+					<div class="firstView_text_container">
+						<h1>河内木綿ておりば</h1>
+						<h2>ゆっくりと丁寧に</h2>
+						<div class="firstView_text_copy_container">
+							<h3>てのひらから広がる</h3>
+							<h3>河内木綿のやさしさ</h3>
+						</div>
+					</div>
 
 				</div>
 			</section>
+
+			<!--FEATURE-->
+			<section class="feature">
+				<div class="feature_container">
+					<div class="feature_heading_container">
+						<h2>時間にゆとりがある今だからこそ、</h2>
+						<h2>手仕事で紡ぐモノづくりを始めませんか？</h2>
+					</div>
+					<div class="feature_contents_container">
+						<div class="feature_contents_image_container">
+							<h3>”ておりば”ってどんなとこ？</h3>
+						</div>
+						<div class="feature_contents_text_container">
+							<ul>
+								<li>・手紡ぎの技術を学ぶ</li>
+								<li>・手織りの技術を学ぶ</li>
+								<li>・難易度別に８作品を制作する</li>
+								<li>・全部制作すると卒業です</li>
+								<li>・毎週火曜日が開催日</li>
+								<li>・月イチ、第三土曜日もあります</li>
+								<li>・１回１０００円で学べます</li>
+								<li>・必要な道具は揃っています</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
 		</main>
 		
 	</body>
