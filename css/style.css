@@ -581,7 +581,6 @@
 .solution_container{
     width: 100%;
     height: auto;
-    background-color: #d0d0ff;
 }
 
     /*HEADING*/
@@ -607,7 +606,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: solid 0.5px #ff0000;
     }
 
         .solution_contents_inner_container{
@@ -617,23 +615,11 @@
             flex-direction: column;
             gap: 10px;
             justify-content: center;
-            border: dashed 0.5px #0000ff;
-        }
-
-        @media(min-width: 768px){
-            .solution_contents_inner_container{
-                width: 768px;
-                height: 370px;
-                flex-direction: row;
-                align-items: center;
-            }
         }
 
             .solution_contents_inner_text_container, .solution_contents_inner_image_container{
                 width: 350px;
                 height: 350px;
-                background-color: #ffff00;
-                border: solid 0.5px #343434;
             }
 
                 .solution_contents_inner_image_container img{
@@ -646,7 +632,6 @@
                     height: 50px;
                     display: flex;
                     align-items: center;
-                    border: solid 0.5px #ff00ff;
                 }
 
                     .solution_contents_inner_text_title_container h3{
@@ -656,7 +641,6 @@
                         font-style: normal;
                         font-size: 24px;
                         margin-left: 10px;
-                        border: solid 0.5px #000;
                     }
 
                     .solution_number{
@@ -669,6 +653,26 @@
                         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
                         display: grid;
                         place-items: center;
+                    }
+
+                    .number_second{
+                        background-color: #93b447;
+                    }
+
+                    .number_third{
+                        background-color: #ca4684;
+                    }
+
+                    .number_forth{
+                        background-color: #136eab;
+                    }
+
+                    .number_fifth{
+                        background-color: #8a017c;
+                    }
+
+                    .number_sixth{
+                        background-color: #5d5099;
                     }
 
                         .solution_number p{
@@ -684,7 +688,6 @@
                     width: 100%;
                     height: 280px;
                     padding: 10px 5px;
-                    border: solid 0.5px #0ff;
                 }
 
                     .solution_contents_inner_text_description_container p{
@@ -695,3 +698,76 @@
                         font-size: 18px;
                         line-height: 1.5rem;
                     }
+
+.underHeading_container{
+    width: 100%;
+    height: 100px;
+    display: grid;
+    place-items: center;
+}
+
+    .underHeading_container h4{
+        font-family: "Kaisei Decol", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+    }
+
+/*SOLUTION -SEand13mini-*/
+@media(max-width: 350px){
+    .underHeading_container h4{
+        font-size: 20px;
+    }
+
+    .solution_contents_inner_image_container img{
+        width: 300px;
+        object-fit: cover;
+    }
+
+    .solution_contents_inner_text_container, .solution_contents_inner_image_container{
+        width: 300px;
+    }
+
+    .solution_contents_inner_container{
+        width: 300px;
+    }
+}
+
+/*SOLUTION -DESKTOP-*/
+@media(min-width: 768px){
+    .underHeading_container h4{
+        font-size: 32px;
+    }
+
+    .solution_contents_inner_text_title_container h3{
+        font-size: 28px;
+    }
+
+    .solution_contents_inner_text_container, .solution_contents_inner_image_container{
+        width: 379px;
+    }
+
+    .solution_contents_inner_text_container p{
+        font-size: 20px;
+    }
+
+    .solution_contents_inner_image_container img{
+        width: 379px;
+        object-fit: cover;
+    }
+
+    .solution_heading_container h2{
+        font-size: 32px;
+    }
+
+    .solution_contents_inner_container{
+        width: 768px;
+        height: 370px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .solution_second_contents, .solution_forth_contents, .solution_sixth_contents{
+        flex-direction: row-reverse;
+    }
+}
